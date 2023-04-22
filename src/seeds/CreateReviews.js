@@ -1,0 +1,75 @@
+const { Review } = require('../db');
+
+
+const fakeReviews = [
+    {rating: 2, MenuItemId: 1 },
+    {rating: 3, MenuItemId: 1 },
+    {rating: 3, MenuItemId: 1 },
+    {rating: 2, MenuItemId: 1 },
+    {rating: 3, MenuItemId: 1 },
+    {rating: 2, MenuItemId: 2 },
+    {rating: 3, MenuItemId: 2 },
+    {rating: 3, MenuItemId: 2 },
+    {rating: 3, MenuItemId: 2 },
+    {rating: 2, MenuItemId: 2 },
+    {rating: 3, MenuItemId: 2 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 4, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+    {rating: 4, MenuItemId: 3 },
+    {rating: 5, MenuItemId: 3 },
+
+    {rating: 2, MenuItemId: 4 },
+    {rating: 3, MenuItemId: 4 },
+    {rating: 3, MenuItemId: 4 },
+    {rating: 3, MenuItemId: 4 },
+    {rating: 2, MenuItemId: 5 },
+    {rating: 3, MenuItemId: 5 },
+    {rating: 3, MenuItemId: 5 },
+    {rating: 2, MenuItemId: 5 },
+    {rating: 3, MenuItemId: 5 },
+    {rating: 5, MenuItemId: 6 },
+    {rating: 5, MenuItemId: 6 },
+    {rating: 5, MenuItemId: 6 },
+    {rating: 4, MenuItemId: 6 },
+    {rating: 5, MenuItemId: 6 },
+    {rating: 5, MenuItemId: 6 },
+    {rating: 5, MenuItemId: 6 },
+    {rating: 4, MenuItemId: 6 },
+    {rating: 5, MenuItemId: 6 },
+
+    {rating: 2, MenuItemId: 7 },
+    {rating: 3, MenuItemId: 7 },
+    {rating: 3, MenuItemId: 7 },
+    {rating: 2, MenuItemId: 7 },
+    {rating: 5, MenuItemId: 7 },
+    {rating: 3, MenuItemId: 7 },
+    {rating: 2, MenuItemId: 8 },
+    {rating: 3, MenuItemId: 8 },
+    {rating: 3, MenuItemId: 8 },
+    {rating: 3, MenuItemId: 8 },
+    {rating: 2, MenuItemId: 8 },
+    {rating: 3, MenuItemId: 8 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 4, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+    {rating: 4, MenuItemId: 9 },
+    {rating: 5, MenuItemId: 9 },
+
+]
+
+module.exports = async function() {
+      await Review.bulkCreate(fakeReviews)
+      await new Promise(resolve => setTimeout(resolve, 400)); // Esperar 400 ms
+
+}
